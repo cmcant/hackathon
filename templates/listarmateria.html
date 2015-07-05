@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+	<hr>
+    <h1> MATERIA Listar</h1>
+	<a href='/inserirmateria/'> Novo Registro </a> 
+	<hr>
+
+	<table border="0" width="100%">
+	<tr>
+	<td>NOME</td>
+	<td>TEMPO</td>
+	<td></td>
+	<td></td>
+	</tr>
+	{% for m in materia %}
+	<tr>
+	   <td> {{ m.nome }} </td>
+	   <td> {{ m.tempo }} </td>
+	   <td> <a href='/editarmateria/{{ m.id }}'> Editar </a> </td>
+	   <td> <a href='/deletarmateria/{{ m.id }}'> Deletar </a> </td>
+	</tr>
+	{% empty %}
+	   <td> <a href='/inserirmateria/'> Inserir </a> </td>
+	{% endfor %}
+	</table>
+
+{% endblock %}

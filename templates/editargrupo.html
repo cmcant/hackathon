@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+	<h1> GRUPO editar</h1>
+
+	<form action="/editargrupo/{{ form.instance.pk }}/" method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <input type="submit" value="Salvar" />
+	</form>
+{% endblock %}

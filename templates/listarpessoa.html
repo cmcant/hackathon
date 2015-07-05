@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block contents %}
+	<hr>
+    <h1> PESSOA Listar</h1>
+	<a href='/inserirpessoa/' class='button'> Novo Registro </a>
+	<hr>
+
+	<table border="0" width="100%">
+	<tr>
+	<td>NOME</td>
+	<td></td>
+	<td></td>
+	</tr>
+	{% for p in pessoa %}
+	<tr>
+	   <td> {{ p.nome }} </td>
+	   <td> <a href='/editarpessoa/{{ p.id }}'> Editar </a> </td>
+	   <td> <a href='/deletarpessoa/{{ p.id }}'> Deletar </a> </td>
+	</tr>
+	{% endfor %}
+	</table>
+
+{% endblock %}

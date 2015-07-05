@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block contents %}
+      <div class="col-md-6">
+        <div class="page-header">
+          <h1>{{grupo.name}}</h1>
+          <p class='lead'>Descrição do grupo</p>
+        </div>
+      </div>
+
+
+      <ul class="list-group col-md-6 ">
+          {% for m in materia %}
+            <li class="list-group-item">{{ m.nome }}</li>
+          {% endfor %}
+      </ul>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   
+      <h2>Membros</h2>
+      {%for p in pessoa%}
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="http://placehold.it/240x200" alt="...">
+            <div><h3>{{ p.nome }}</h3></div>
+          </div>
+        </div>
+      {% endfor %}
+  
+{% endblock %}  

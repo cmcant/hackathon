@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block contents %}
+
+	<hr>
+    <h1> GRUPO Listar</h1>
+	<td> <a href='/inserirgrupo/'> Novo Registro </a> </td>
+	<hr>
+
+	<table border="0" width="100%">
+	<tr>
+	<td>NOME</td>
+	<td></td>
+	<td></td>
+	</tr>
+	{% for g in grupo %}
+	<tr>
+	   <td> {{ g.name }} </td>
+	   <td> <a href='/editargrupo/{{ g.id }}'> Editar </a> </td>
+	   <td> <a href='/deletargrupo/{{ g.id }}'> Deletar </a> </td>
+	</tr>
+	{% endfor %}
+	</table>
+
+
+{% endblock %}
